@@ -45,6 +45,6 @@ while True:
         break
 
 if vitoria:
-    print(f'parabéns você ganhou. A palavra era {palavra}')
+    printCor(f'Parabéns você ganhou. A palavra era {palavra}', 'light_cyan')
 else:
-    print(f'Você perdeu. A palavra era {palavra}')
+    printCor(f'Você perdeu. A palavra era {palavra}', 'light_magenta')

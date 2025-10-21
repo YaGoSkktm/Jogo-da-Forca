@@ -1,7 +1,6 @@
 import random
 import TemasSorteio
 
-
 TEMA = random.choice(list(TemasSorteio.temas.keys()))
 palavraSorteada = random.choice(TemasSorteio.temas[TEMA])
 
@@ -18,11 +17,10 @@ init()
 
 def printCor(msg, cor, Nacor=None):
     '''
-    
     :param msg: Aqui você pode escrever oque quer que apareça
     :param cor: Agui você escolhe a cor das letras (deve ser em inglês e em letras minúsculas)
     :param Nacor: aqui é o cur no fundo das letras, funciona igual a cor porém deve ter on_ antes da cor.
-    :return: 
+    :return:
     '''
     print(colored(msg, cor, Nacor))
 
@@ -46,17 +44,17 @@ while True:
         printCor('ERROU!', 'red', 'on_black')
         if vidas > 0:
             printCor(f'Você tem {vidas} vidas', 'magenta', 'on_black')
-    printCor('++' * 10, 'blue')
+    printCor('++' * 15, 'blue')
     vitoria = True
     for letra in palavra:
         if letra not in letras_palavra:
             vitoria = False
 
     if vidas < 1 or vitoria:
-        printCor('GAME OVER!', 'cyan')
         break
 
 if vitoria:
-    printCor(f'parabéns você ganhou. A palavra era {palavra}', 'light_cyan')
+    printCor(f'PARABENS, VOCÊ GANHOU!. A palavra era {palavra.upper()}', 'light_cyan')
 else:
-    printCor(f'Você perdeu. A palavra era {palavra}', 'magenta')
+    printCor('GAME OVER!', 'magenta')
+    printCor(f'Você perdeu. A palavra era {palavra.upper()}', 'magenta')
